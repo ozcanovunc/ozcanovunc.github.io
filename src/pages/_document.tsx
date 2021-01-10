@@ -1,10 +1,7 @@
 import * as React from "react";
-
 import NextDocument, { Head, Html, Main, NextScript } from "next/document";
-
 import { ColorModeScript } from "@chakra-ui/react";
 import type { DocumentContext } from "next/document";
-import siteConfig from "~/site-config";
 
 export default class Document extends NextDocument {
   static async getInitialProps(ctx: DocumentContext) {
@@ -18,14 +15,9 @@ export default class Document extends NextDocument {
         <Head>
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-          <meta name="theme-color" content={siteConfig.themeColor} />
-          <meta name="msapplication-TileColor" content={siteConfig.themeColor} />
-
-          <link rel="manifest" href="/manifest.json" />
 
           <meta content="/mstile-70x70.png" name="msapplication-square70x70" />
           <meta content="/mstile-144x144.png" name="msapplication-square144x144" />

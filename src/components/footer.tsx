@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
   const socials = useSocials();
 
   const content = `
-    Made using [Next.js](https://nextjs.org) and [Chakra UI](https://next.chakra-ui.com).
-    Hosted on [Vercel](https://vercel.com). <br />
-    MIT License &copy; ${new Date().getFullYear()}&ndash;present [Ozcan Ovunc](.).
+    Made with ❤️ using [Next.js](https://nextjs.org) and [Chakra UI](https://next.chakra-ui.com).
+    <br/>
+    Copyright &copy; ${new Date().getFullYear()} [Ozcan Ovunc](.).
   `
     .trim()
     .replace(/\s{3,}/, " ");
@@ -47,9 +47,9 @@ const Footer: React.FC = () => {
             />
           </Box>
           <HStack spacing={6}>
-            {socials.map(([href, SocialIcon]) => (
+            {socials.map(({ href, icon }) => (
               <Link href={href} isExternal key={href}>
-                <Icon as={SocialIcon} boxSize={5} />
+                <Icon as={icon} boxSize={5} />
               </Link>
             ))}
           </HStack>

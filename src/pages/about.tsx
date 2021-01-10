@@ -1,14 +1,13 @@
 import * as React from "react";
-
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-const EmptyPage: NextPage = () => {
+const AboutPage: NextPage = () => {
   return (
     <>
-      <NextSeo title="Empty" />
+      <NextSeo title="About" />
     </>
   );
 };
 
-export default EmptyPage;
+export default AboutPage;

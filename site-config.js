@@ -16,9 +16,14 @@ module.exports = {
   twitterUsername: "@ozcanovunc",
   email: "ozcanovunc@outlook.com",
   socials: {
-    GitHub: "https://github.com/ozcanovunc",
+    Github: "https://github.com/ozcanovunc",
     Twitter: "https://twitter.com/ozcanovunc",
     Instagram: "https://instagram.com/ozcanovunc",
+    Linkedin: "https://www.linkedin.com/in/ozcanovunc",
+    Medium: "https://medium.com/@ozcanovunc",
+    Envelope: "mailto:ozcanovunc@outlook.com",
   },
-  themeColor: "#F6E05E",
+  mainSocials: ["Github", "Linkedin"],
+  profileUrl:
+    "https://www.gravatar.com/avatar/377f15e733cc48e22dc47084cf21cedb?s=600",
 };

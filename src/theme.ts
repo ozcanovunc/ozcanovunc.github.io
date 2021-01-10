@@ -24,11 +24,18 @@ const mono = [
 ].join(",");
 
 export default extendTheme({
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: mode("#F2F4F3", "#0A0908")(props),
+      },
+    }),
+  },
   components: {
     Link: {
       variants: {
         link: (props) => ({
-          color: mode("yellow.700", "yellow.300")(props),
+          color: mode("#A9927D", "#B6244F")(props),
         }),
       },
     },

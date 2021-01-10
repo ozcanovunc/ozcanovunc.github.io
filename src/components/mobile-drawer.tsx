@@ -8,6 +8,7 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  HStack,
   Icon,
   IconButton,
   Link,
@@ -32,7 +33,6 @@ const MobileDrawer: React.FC = () => {
       <Box bottom={0} d={{ md: "none" }} p={5} pos="fixed" right={0} zIndex={1}>
         <IconButton
           aria-label="Open menu"
-          colorScheme="yellow"
           icon={<Icon as={isOpen ? FaTimes : FaBars} />}
           isRound
           onClick={onToggle}
@@ -84,18 +84,13 @@ const MobileDrawer: React.FC = () => {
             </DrawerBody>
 
             <DrawerFooter justifyContent="flex-start" px={4} py={8}>
-              {socials.map(([href, SocialIcon]) => (
-                <IconButton
-                  as="a"
-                  aria-label={href}
-                  color="currentColor"
-                  href={href}
-                  icon={<Icon as={SocialIcon} boxSize={6} />}
-                  key={href}
-                  size="lg"
-                  variant="link"
-                />
-              ))}
+              <HStack spacing={6}>
+                {socials.map(({ href, icon }) => (
+                  <Link href={href} isExternal key={href}>
+                    <Icon as={icon} boxSize={5} />
+                  </Link>
+                ))}
+              </HStack>
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>

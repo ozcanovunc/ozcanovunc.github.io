@@ -1,7 +1,11 @@
 const routes = [
   {
-    text: "Empty Page",
-    href: "/empty",
+    text: "About",
+    href: "/about",
+  },
+  {
+    text: "Portfolio",
+    href: "/portfolio",
   },
 ];
 

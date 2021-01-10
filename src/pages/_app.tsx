@@ -3,7 +3,7 @@ import "@/stylesheets/html.css";
 import * as React from "react";
 
 import { Box, ChakraProvider, Stack } from "@chakra-ui/react";
-import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
+import { SocialProfileJsonLd } from "next-seo";
 
 import { AppContextProps } from "@/store/app";
 import Footer from "@/components/footer";
@@ -25,39 +25,13 @@ Router.events.on("routeChangeError", () => NProgress.done());
 type AppProps = NextAppProps & AppContextProps;
 
 function App(props: AppProps) {
-  const { Component, pageProps, router } = props;
+  const { Component, pageProps } = props;
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-
-      <DefaultSeo
-        title="Welcome!"
-        titleTemplate={`%s · ${siteConfig.title}`}
-        description={siteConfig.description}
-        canonical={siteConfig.url + (router.asPath || "")}
-        openGraph={{
-          title: siteConfig.title,
-          description: siteConfig.description,
-          type: "website",
-          site_name: siteConfig.title,
-          images: [
-            {
-              url: `${siteConfig.url}/social.png`,
-              width: 1024,
-              height: 512,
-              alt: siteConfig.title,
-            },
-          ],
-        }}
-        twitter={{
-          cardType: "summary_large_image",
-          handle: siteConfig.twitterUsername,
-          site: siteConfig.twitterUsername,
-        }}
-      />
 
       <SocialProfileJsonLd
         type="person"
