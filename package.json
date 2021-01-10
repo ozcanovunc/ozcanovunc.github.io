@@ -1,22 +1,15 @@
 {
-  "name": "nextplate",
-  "description": "An opinionated Next.js template for your next plate 🍽️",
+  "name": "personal-website",
+  "description": "personal-website",
   "version": "1.0.0",
   "repository": "https://github.com/ozcanovunc/personal-website.git",
   "author": "Ozcan Ovunc <ozcanovunc@outlook.com>",
   "scripts": {
-    "now-build": "run-s \"build:**\"",
-    "build": "env-cmd run-s \"build:**\"",
-    "build:scripts": "node scripts/build.js",
-    "build:web": "next build && next-sitemap",
-    "clean": "rimraf \".next\" \"public/!(.gitkeep)\"",
-    "develop": "next dev",
-    "format": "run-p \"format:**\"",
-    "format:index": "prettier --write \"*.{js,json,md}\"",
-    "format:src": "prettier --write \"src/**/*.{css,js,ts,tsx}\"",
-    "lint": "eslint --cache --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-    "type-check": "tsc --noEmit",
-    "validate": "run-s lint type-check"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.0.4",
@@ -62,6 +55,5 @@
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.1.2"
-  },
-  "license": "MIT"
+  }
 }
